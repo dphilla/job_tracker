@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#revisit syntax and common methods 
 describe Company do
   describe "validations" do
     context "invalid attributes" do

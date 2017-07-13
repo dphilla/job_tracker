@@ -1,5 +1,5 @@
 require 'rails_helper'
-
+#revisits specific syntax and common methods 
 describe "User creates a new company" do
   scenario "a user can create a new company" do
     visit new_company_path
