@@ -7,10 +7,10 @@ describe "User update a job" do
 
     visit edit_company_job_path(company, job)
 
-    fill_in "job[title]", with: "Al-Jazeera"
+    fill_in "job[title]", with: "Journalist"
     click_button "Update"
 
-    expect(current_path).to eq("/companies/###{Company.last.id}/jobs")
-    expect(page).to have_content("Al-Jazeera")
+    expect(current_path).to eq("/companies/#{Company.last.id}/jobs/#{job.id}")
+    expect(page).to have_content("Journalist")
   end
 end
