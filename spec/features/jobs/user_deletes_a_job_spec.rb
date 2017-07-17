@@ -1,16 +1,16 @@
 require 'rails_helper'
 
-describe "User deletes a job" do
-  scenario "user can delete a job" do
-    company = Company.create!(name: "CNN")
-    job = company.jobs.create!(title: "Developer", level_of_interest: 70, city: "Denver")
+RSpec.feature "User visits job index" do
+  scenario "user can delete an existing job" do
+    company_1 = create(:company)
+    job_1 = create(:job, company_id: company_1.id)
 
-    visit company_jobs_path(company)
+    visit company_jobs_path(company_1)
+    expect(page).to have_content(job_1.title)
 
-    click_link "Delete"
+    click_on "Delete"
 
-    visit company_path(company)
-
-    expect(page).to_not have_content(job.title)
+    expect(current_path).to eq(company_jobs_path(company_1))
+    expect(page).to have_content("#{job_1.title} was successfully deleted!")
   end
 end
