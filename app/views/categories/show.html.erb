@@ -1,2 +1,9 @@
 
   <ul><%= @category.name %></ul>
+
+
+  <h3> Jobs: </h3>
+
+  <% @category.jobs.each do |job| %>
+    <li><%= job.title %> </li>
+  <% end %>
