@@ -4,14 +4,14 @@ FactoryGirl.define do
       sequence :title do |t|
         "job #{t}"
       end
-      description "super descrip"
+      description "something"
 
       sequence :level_of_interest do |t|
         t
       end
 
       company
-      city "city of dreams"
+      city "city o city"
       category
     end
 end
