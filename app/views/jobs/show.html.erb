@@ -11,3 +11,10 @@ City: <%= @job.city %>
 <br>
 
 Company: <%= link_to @job.company.name, company_path(@job.company) %>
+
+<p>
+<footer>
+<p> <%= link_to "Companies Home", companies_path %></p>
+<%= link_to "Jobs in this Company", company_jobs_path %>
+</footer>
+</p>
